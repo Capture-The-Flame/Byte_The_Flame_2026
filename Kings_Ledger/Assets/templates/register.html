@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Royal Archives</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>⚔️ Register ⚔️</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="username">Thy Name</label>
+                <input type="text" id="username" name="username" required placeholder="Enter thy name...">
+            </div>
+            <div class="form-group">
+                <label for="password">Secret Passphrase</label>
+                <input type="password" id="password" name="password" required placeholder="Enter thy secret...">
+            </div>
+            <button type="submit" class="btn">Inscribe in the Ledger</button>
+        </form>
+        
+        <div class="link">
+            <a href="{{ url_for('login') }}">Already inscribed? Enter the Archives</a>
+        </div>
+        
+        <div class="hint">
+            <p>📖 <strong>Royal Decree:</strong> All names inscribed herein are used as custom queries in His Majesty's Grand Monitoring Scrolls.</p>
+            <p style="font-size: 13px; font-style: italic;">The Royal Scribe suggests: Names may reference the sacred tables of the realm.</p>
+        </div>
+    </div>
+</body>
+</html>

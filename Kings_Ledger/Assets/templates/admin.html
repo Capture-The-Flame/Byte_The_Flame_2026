@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King's Chamber - Royal Archives</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h2>King's Sacred Chamber</h2>
+        <a href="{{ url_for('logout') }}">Depart</a>
+    </div>
+    
+    <div class="container">
+        <h1>📖 The Royal Ledger 📖</h1>
+        <p class="subtitle">His Majesty's Custom Query Scrolls - Each subject's name executed as divine command</p>
+        
+        {% if user_activities %}
+            {% for user_data in user_activities %}
+                <div class="user-section">
+                    <h3>⚜ Query Command: {{ user_data.username }}</h3>
+                    {% if user_data.activities %}
+                        <table>
+                            <thead>
+                                <tr>
+                                    {% if user_data.activities[0] %}
+                                        {% for key in user_data.activities[0].keys() %}
+                                            <th>{{ key }}</th>
+                                        {% endfor %}
+                                    {% endif %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for activity in user_data.activities %}
+                                    <tr>
+                                        {% for value in activity.values() %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p class="no-activities">No records returned from this divine query.</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center; padding: 40px; color: #5c4033;">No subjects have inscribed their queries in the ledger.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

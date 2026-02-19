@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber - Royal Archives</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h2>⚜ Subject's Chamber ⚜</h2>
+        <a href="{{ url_for('logout') }}">Depart</a>
+    </div>
+    
+    <div class="container">
+        <h1>Hail, {{ username }}!</h1>
+        <p>Thou art logged in as a subject of the realm.</p>
+        <p>Thy deeds are recorded in His Majesty's Grand Ledger.</p>
+        <div class="seal">🛡️</div>
+    </div>
+</body>
+</html>

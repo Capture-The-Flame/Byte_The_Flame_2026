@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Archives - King's Ledger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='throne.png') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>⚔️ Royal Archives ⚔️</h1>
+        <p>Welcome to His Majesty's Sacred Ledger of Records</p>
+        <p style="font-size: 16px;">Wherein all subjects of the realm are documented</p>
+        <div class="buttons">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Enter the Archives</a>
+            <a href="{{ url_for('register') }}" class="btn btn-secondary">Register thy Name</a>
+        </div>
+        <div class="seal">🏰</div>
+    </div>
+</body>
+</html>
