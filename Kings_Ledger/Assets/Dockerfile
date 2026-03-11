@@ -1,25 +1,20 @@
 # Use official Python image
 FROM python:3.12-slim
 
-# Set working directory inside container
 WORKDIR /app
 
-# Copy Python requirements
+# Copy requirements
 COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
+# Copy project files
 COPY . .
 
-# Expose Flask port
-EXPOSE 5000
-
-# Set environment variables for Flask
+# Render provides the PORT environment variable
 ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=production
 
-# Run Flask
-CMD ["flask", "run"]
+# IMPORTANT: bind to 0.0.0.0 and $PORT
+CMD ["sh", "-c", "flask run --host=0.0.0.0 --port=${PORT:-5000}"]
