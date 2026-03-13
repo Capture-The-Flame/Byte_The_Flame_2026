@@ -1,6 +1,11 @@
-# Byte_The_Flame_2026
+<!-- # Byte_The_Flame_2026 -->
+<div align="center">
+    <img src="./public/Byte_The_Flame_Logo.svg" width="1000">
+</div>
 
-**WELCOME** to the *Byteo the Flame 2026* repository! We have currated *12 beginner challanges* to introduce some cyber security concepts and capture the flag challenge fundamentals for the preparation season of our annual **Capture the Flame** competition!
+---
+
+**WELCOME** to the *Byte the Flame 2026* repository! We have currated *12 beginner challanges* to introduce some cyber security concepts and capture the flag challenge fundamentals for the preparation season of our annual **Capture the Flame** competition!
 
 Challenges were hosted on our CTF Platform  
 
